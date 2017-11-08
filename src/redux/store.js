@@ -17,16 +17,12 @@ const store = createStore(
     task: taskReducer,
     article: articleReducer,
   }),
+  // loadState(),
 
   applyMiddleware(thunk),
   // composeWithDevTools(applyMiddleware(thunk)), // uncomment to enable cool extension
-
-
-  // loadState()
 );
-
-
-// store.subscribe(() => saveState(store.getState()));
+// store.subscribe(() => saveState(store.getState())); // uncomment to enable persisting state to localStorage
 
 
 

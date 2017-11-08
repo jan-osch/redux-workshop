@@ -1,5 +1,5 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension'; // neat browser extension
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 import taskReducer from './taskReducer';
@@ -17,12 +17,14 @@ const store = createStore(
     task: taskReducer,
     article: articleReducer,
   }),
+
   applyMiddleware(thunk),
-  composeWithDevTools(applyMiddleware(thunk)), // uncomment to enable cool extension
+  // composeWithDevTools(applyMiddleware(thunk)), // uncomment to enable cool extension
+
+
   // loadState()
 );
 
-export default store;
 
 // store.subscribe(() => saveState(store.getState()));
 
@@ -45,3 +47,6 @@ export default store;
 //
 // // Release listener
 // unsubscribe();
+
+
+export default store;

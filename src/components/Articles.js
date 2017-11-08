@@ -35,9 +35,8 @@ const ArticlesPresentation = ({ articles, error, fetching, fetchNew }) => {
 
         {
           articles.map(article => (
-            <li>
+            <li key={article.url}>
               <a href={article.url}
-                 key={article.url}
                  target='_blank'
               >
                 {article.title}
